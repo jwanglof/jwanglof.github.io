@@ -29,14 +29,37 @@ My initial try with option #2 was to follow the steps in the book: Get the `tar.
   
 Now the only thing left to do was to build the damn thing, and let me tell you that it takes a long time to build Node on a single-core that runs at 400MHz... A bit of advice: run the commands with a one-liner: `./configure; make; make install`, then you can just leave it over night and hopefully it will be done in the morning..
 
+## So.. I decided to forget about trying to update Node on the board, have been trying for >6hours and then I came up with a brilliant idea: Why not just write the software in Python?!
+
+## So that's where I'm right now, and that's what the rest of this blog-post will be about =P
+
+So I did some Googling and found this [tutorial][intel-tutorial] that shows how to transfer a Python-program to the board (search for "Step C. Transfer files to Intel ® Galileo Gen 2" to find the section). However, I didn't feel like I wanted to SSH into the board each time I wanted to run the Python-program so I created a small script, these are the steps to create the same file:
+
+~~~
+1. cd /etc/init.d
+2. vi run_python.sh
+3. Add the following content to the file:
+
+   #!/bin/sh
+   /usr/bin/python2 /python/main.py &
+   
+4. chmod +x run_python.sh
+5. update-rc.d run_python.sh defaults
+~~~
+
+The script assumes that the Python-program you're uploading is uploaded to the `/python`-directory and is called `main.py` (I got help from this [blog][stephaniemoyerman]).
+
+Now I gotta figure out how to upload the code I'm writing from PyCharm, but that's for tomorrow..
 
 <!-- Links -->
 [build-electronic-circuits]: http://www.build-electronic-circuits.com/intel-galileo-boot-sd-card/
 [intel-galileo-book]: https://books.google.se/books?id=xVAnCgAAQBAJ&pg=PA466&lpg=PA466&dq=yocto+opkg+nodejs&source=bl&ots=bdk3McXNvU&sig=fE9tPVVQYMiUOQiSLFtPEiRaSWI&hl=en&sa=X&ved=0ahUKEwiw6v7E-anLAhVtSZoKHeeWB8cQ6AEINjAD#v=onepage&q=yocto%20opkg%20nodejs&f=false
 [intel-galileo-download]: https://software.intel.com/en-us/iot/hardware/galileo/downloads
 [intel-galileo-temperature-example]: https://software.intel.com/en-us/creating-a-temperature-monitoring-app-using-intel-xdk-iot-edition
+[intel-tutorial]: https://communities.intel.com/docs/DOC-23764
 [opkg]: http://git.yoctoproject.org/cgit/cgit.cgi/opkg/
 [seed-starter]: http://www.seeedstudio.com/depot/Grove-starter-kit-plus-Intel-IoT-Edition-for-Intel-Galileo-Gen-2-and-Edison-p-1978.html
+[stephaniemoyerman]: http://stephaniemoyerman.com/?p=41
 [swec-competition]: http://www.sweclockers.com/artikel/21803-bygg-galileo-tavla-och-vinn-intels-stora-prispaket-pa-dustin-expo-2016
 
 <!-- Images -->
