@@ -1,0 +1,119 @@
+@import "../node_modules/picnic/src/picnic";
+//@import 'https://fonts.googleapis.com/css?family=Lato:100,400,900';
+@import "google-fonts-offline";
+
+$title: normal 24px/1.5 sans-serif;
+
+html,body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h2, h4 {
+  padding: 0;
+}
+
+nav {
+  display: block;
+
+  .logo {
+    border-radius: 100px;
+  }
+
+  span, .menu {
+    font-weight: 400;
+  }
+}
+
+main {
+  padding-top: 80px;
+}
+
+.flex {
+  border-bottom: 3px solid black;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.icon {
+  i {
+    font-size: 3em;
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+
+  span {
+    font-size: 2em;
+  }
+}
+
+.work {
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(240, 240, 240);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  .title {
+    display: block;
+
+    // First child: job title
+    span:first-child {
+      font-size: 1.4em;
+    }
+    // 2nd child: web link
+    span:nth-child(2) {
+      margin-left: 15px;
+    }
+    // Last child: the dates
+    span:last-child {
+      clear: both;
+      display: block;
+      font-size: 0.7em;
+    }
+  }
+
+  .text {
+    display: block;
+    clear: both;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+footer {
+  border-top: 1px solid rgba(17, 17, 17, 0.2);
+  font-size: 0.5em;
+  padding: 5px 15px;
+}
+
+.tab {}
+
+.content {
+  margin-bottom: 15px !important;
+}
+
+.skills {
+  max-width: 300px !important;
+  word-break: break-word !important;
+
+  span {
+    margin-right: 5px;
+  }
+
+  .smaller {font-size: 0.5em;}
+  .small {font-size: 0.7em;}
+  .medium {font-size: 1em;}
+  .regular {font-size: 1.3em;}
+  .large {font-size: 1.5em;}
+  .larger {font-size: 1.7em;}
+}

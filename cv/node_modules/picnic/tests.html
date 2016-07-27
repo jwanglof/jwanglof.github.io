@@ -1,0 +1,688 @@
+<!DOCTYPE html><html><head><title>Picnic CSS Testing</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="css, library, css library, picnic, picnicss, html, html5, light, plugin"><meta name="description" content="A lighweight CSS library with nice defaults and many plugins to kickstart your projects"><meta property="og:image" content="http://picnicss.com/web/preview.png?1"><meta property="og:url" content="http://picnicss.com/"><meta property="og:title" content="Picnic CSS - A beautiful CSS library to kickstart your projects"><meta property="og:description" content="Includes buttons, cards, flexbox-based grid, responsive builder with a lot of options"><link rel="stylesheet" href="web/style/style.min.css"><link rel="icon" href="web/img/picnic_test.png" type="image/png"></head><body><nav class="loading"><a href="/" class="brand"><span>Picnic CSS</span></a><!-- responsiveness--><input id="bmenu" type="checkbox" class="show"><label for="bmenu" class="burger toggle pseudo button">menu</label><div class="menu"><a href="/tests" class="pseudo button icon-help-circled">Test</a><a href="https://github.com/picnicss/picnic" target="_blank" class="pseudo button icon-g">Github</a><a href="/documentation" class="button icon-file-code">Documentation</a></div></nav><main class="intro test"><h1>Testing Picnic CSS</h1><p>A small testing page to see how elements behave across devices</p><!-- Testing the module -->
+<h2 id="button">Button types and colors</h2>
+
+<div>
+  <button>Button</button>
+  <button class="success">Button</button>
+  <button class="warning">Button</button>
+  <button class="error"  >Button</button>
+  <button class="pseudo">Button</button>
+  <button disabled>Button</button>
+</div>
+
+<div>
+  <a class="button">Link</a>
+  <a class="button success">Link</a>
+  <a class="button warning">Link</a>
+  <a class="button error">Link</a>
+  <a class="button pseudo">Link</a>
+  <a class="button" disabled>Link</a>
+</div>
+
+<div>
+  <input type="submit" value = "Submit" />
+  <input type="submit" class="success" value="Submit" />
+  <input type="submit" class="warning" value="Submit" />
+  <input type="submit" class="error" value="Submit" />
+  <input type="submit" class="pseudo" value="Submit" />
+  <input disabled type="submit" value="Submit" />
+</div>
+
+<div>
+  <label>
+    <input type="checkbox" />
+    <span class="toggle button">Toggle</span>
+  </label>
+  <label>
+    <input type="checkbox" />
+    <span class="toggle button success">Toggle</span>
+  </label>
+  <label>
+    <input type="checkbox" />
+    <span class="toggle button warning">Toggle</span>
+  </label>
+  <label>
+    <input type="checkbox" />
+    <span class="toggle button error">Toggle</span>
+  </label>
+  <label>
+    <input type="checkbox" />
+    <span class="toggle button pseudo">Toggle</span>
+  </label>
+  <label>
+    <input disabled type="checkbox" />
+    <span disabled class="toggle button">Toggle</span>
+  </label>
+</div>
+
+
+<h2 id="card">Card</h2>
+
+<p>
+  <div class="flex three">
+    <div>
+      <article class="card">
+        <img src="web/img/forest.jpg">
+        <section>This is a nice forest. What do you want to do with it?</section>
+        <footer>
+          <button>Enjoy</button>
+          <button class="dangerous">Go away</button>
+        </footer>
+      </article>
+    </div>
+    <div>
+      <article class="card">
+        <header>
+          <h3>A more elaborated card</h3>
+        </header>
+        <section>It has some text</section>
+        <footer>
+          And even a footer!
+        </footer>
+      </article>
+      <div>
+        <input type="checkbox" id="cardtoggle">
+        <article class="card">
+          <p>Paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+          <label for="cardtoggle" class="close">×</a>
+        </article>
+      </div>
+    </div>
+    <div>
+      <input id="cardtoggle2" type="checkbox" name="name">
+      <article class="card">
+        <header>
+          <h1>Header 1</h1>
+          <label for="cardtoggle2" class="close">×</a>
+        </header>
+      </article>
+      <input id="cardtoggle3" type="checkbox" name="name2">
+      <article class="card">
+        <header>
+          <h2>Header 2</h2>
+          <label for="cardtoggle3" class="close">×</label>
+        </header>
+      </article>
+      <article class="card">
+        <header>
+          <h3>Header 3</h3>
+          <a class="close">×</a>
+        </header>
+      </article>
+      <article class="card">
+        <header>
+          <h4>Header 4</h4>
+          <a class="close">×</a>
+        </header>
+      </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <p>This is a one line card</p>
+      <a class="close">×</a>
+    </div>
+  </div>
+</p>
+
+
+<h2 id="checkbox">Checkbox</h2>
+
+<label>
+  <input type="checkbox">
+  <span class="checkable">Check me out (;</span>
+</label>
+<br>
+<input id="checktest" type="checkbox" checked>
+<label for="checktest" class="checkable">Uncheck me</label>
+
+
+<h2 id="dropimage">Dropimage</h2>
+
+<div class="flex three">
+  <div>
+    <label class="dropimage" style="background-image: url('web/img/forest.jpg');">
+      <input name="filea" title="Drop image or click me" type="file">
+    </label>
+  </div>
+  <div>
+    <label class="dropimage">
+      <input name="fileb" title="Drop image or click me" type="file">
+    </label>
+  </div>
+  <div>
+    <label class="dropimage">
+      <input name="filec" title="Drop image or click me" type="file">
+    </label>
+  </div>
+</div>
+
+<script>
+  window.onload = function(){
+    [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+      img.onchange = function(e){
+        var inputfile = this, reader = new FileReader();
+        reader.onloadend = function(){
+          inputfile.style['background-image'] = 'url('+reader.result+')';
+        }
+        reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+  };
+</script>
+
+
+<h2 id="grid">Grid</h2>
+
+
+<div class="flex two four-500 six-800 demo">
+  <div><span>1</span></div>
+  <div><span>2</span></div>
+  <div class="full half-500 third-800"><span>3</span></div>
+  <div><span>4</span></div>
+  <div><span>5</span></div>
+  <div><span>6</span></div>
+  <div><span>7</span></div>
+  <div><span>8</span></div>
+  <div><span>9</span></div>
+  <div class="off-half off-fourth-500 off-sixth-800"><span>10</span></div>
+</div>
+
+
+<h2 id="input">Input</h2>
+
+<div class="flex two">
+  <div>
+    <input placeholder="Full name" />
+  </div><div>
+    <input type="number" placeholder="Number" />
+  </div>
+</div>
+<div class="flex two">
+  <div>
+    <input type="email" placeholder="Email"/>
+  </div><div>
+    <input type="password" placeholder="Password"/>
+  </div>
+</div>
+<div class="flex two">
+  <div>
+    <input type="file"/>
+  </div><div>
+    <input type="color"/>
+  </div>
+</div>
+
+<div class="flex one">
+  <div>
+    <textarea placeholder="Full description"></textarea>
+  </div>
+</div>
+
+
+<h2 id="label">Label</h2>
+
+<p>
+  <h1>h1 is important
+    <span class="label">Normal</span>
+  </h1>
+  <h2>h2 is important too
+    <span class="label success">Success</span>
+  </h2>
+  <h3>Is h3 important?
+    <span class="label warning">Warning</span>
+  </h3>
+  <h4>h4 is not so important
+    <span class="label error">Error</span>
+  </h4>
+  <p>p is normal text
+    <span class="label">Normal</span>
+  </p>
+</p>
+
+<h2 id="modal">Modal</h2>
+
+<p>
+  <label for="modal_1" class="button">
+  Show modal
+  </label>
+</p>
+
+<div class="modal">
+  <input id="modal_1" type="checkbox" />
+  <label for="modal_1" class="overlay"></label>
+  <article>
+    <header>
+      <h3>Great offer</h3>
+      <label for="modal_1" class="close">×</label>
+    </header>
+    <section class="content">
+      We have a special offer for you. I am sure you will love it! However this does look spammy...
+    </section>
+    <footer>
+      <a class="button" href="#">See offer</a>
+      <label for="modal_1" class="button dangerous">
+        Cancel
+      </label>
+    </footer>
+  </article>
+</div>
+
+
+<h2 id="nav">Nav</h2>
+
+<p>
+  <nav style="position: relative; z-index: 9">
+    <a href="#" class="brand">
+      <img class="logo" src="web/img/basket.png" />
+      <span>Picnic CSS</span>
+    </a>
+    
+    <!-- responsive-->
+    <input id="bmenub" type="checkbox" class="show">
+    <label for="bmenu" class="burger pseudo button toggle">menu</label>
+
+    <div class="menu">
+      <a href="#" class="pseudo button icon-picture">Demo</a>
+      <a href="#" class="button icon-puzzle">Plugins</a>
+    </div>
+  </nav>
+</p>
+
+<h2 id="radio">Radio button</h2>
+
+<p>
+  <label>
+    <input type='radio' name="radiodemo">
+    <span class="checkable">Select me</span>
+  </label>
+</p>
+<p>
+  <label>
+    <input checked type='radio' name="radiodemo">
+    <span class="checkable">Or me</span>
+  </label>
+</p>
+
+<h2 id="select">Select</h2>
+
+<p>
+  <select>
+    <option>Select an option</option>
+    <option>Good option</option>
+    <option>Nice option</option>
+    <option>Cheap option</option>
+  </select>
+</p>
+
+
+<!-- Testing the module -->
+<h2 id="stack">Stack</h2>
+
+<h3>Buttons stack</h3>
+
+<div class="flex four">
+  <div>
+    <span class="stack button icon-puzzle">Plugins</span>
+    <span class="stack button icon-picture">Demo</span>
+    <span class="stack button icon-help-circled">Test</span>
+  </div>
+  <div>
+    <label class="stack">
+      <input type="radio" name="stack" checked/>
+      <span class="button toggle icon-puzzle">Plugins</span>
+    </label>
+    <label class="stack">
+      <input type="radio" name="stack" />
+      <span class="button toggle icon-picture">Demo</span>
+    </label>
+    <label class="stack">
+      <input type="radio" name="stack" />
+      <span class="button toggle icon-help-circled">Test</span>
+    </label>
+  </div>
+  <div>
+    <label class="stack">
+      <input type="checkbox" checked/>
+      <span class="button toggle icon-puzzle">Plugins</span>
+    </label>
+    <label class="stack">
+      <input type="checkbox" checked/>
+      <span class="button toggle icon-picture">Demo</span>
+    </label>
+    <label class="stack">
+      <input type="checkbox"/>
+      <span class="button toggle icon-help-circled">Test</span>
+    </label>
+  </div>
+  <div>
+    <span class="stack pseudo button icon-puzzle">Plugins</span>
+    <span class="stack pseudo button icon-picture">Demo</span>
+    <span class="stack pseudo button icon-help-circled">Test</span>
+  </div>
+</div>
+
+<h3>Image stack</h3>
+
+<div class="flex four">
+  <div>
+    <img class="stack" src="web/img/forest.jpg">
+    <a class="stack button">Forest</a>
+  </div>
+  <div>
+    <img class="stack" src="web/img/balloon.jpg">
+    <a class="stack button">Balloon</a>
+  </div>
+  <div>
+    <img class="stack" src="web/img/lake.jpg">
+    <a class="stack button">Lake</a>
+  </div>
+  <div>
+    <img class="stack" src="web/img/halong.jpg">
+    <a class="stack button">Halong bay</a>
+  </div>
+</div>
+
+<h3>Form stack</h3>
+
+<div class="flex four">
+  <div>
+    <input class="stack" placeholder="Name" />
+    <input class="stack" type="email" placeholder="Email" />
+    <input class="stack" type="password" placeholder="Password" />
+  </div>
+  <div>
+    <select class="stack">
+      <option>Select an option</option>
+      <option>Good option</option>
+      <option>Nice option</option>
+      <option>Cheap option</option>
+    </select>
+    <select class="stack">
+      <option>Select an option</option>
+      <option>Good option</option>
+      <option>Nice option</option>
+      <option>Cheap option</option>
+    </select>
+    <select class="stack">
+      <option>Select an option</option>
+      <option>Good option</option>
+      <option>Nice option</option>
+      <option>Cheap option</option>
+    </select>
+  </div>
+  <div>
+    <textarea class="stack" placeholder="Textarea"></textarea>
+    <textarea class="stack" placeholder="Textarea"></textarea>
+    <textarea class="stack" placeholder="Textarea"></textarea>
+  </div>
+  <div>
+    <label class="dropimage stack">
+      <input name="filea" title="Drop image or click me" type="file">
+    </label>
+    <label class="dropimage stack">
+      <input name="filea" title="Drop image or click me" type="file">
+    </label>
+    <label class="dropimage stack">
+      <input name="filea" title="Drop image or click me" type="file">
+    </label>
+  </div>
+</div>
+
+
+<h2 id="table">Table</h2>
+
+<table class="primary">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Francisco</td>
+      <td>Valencia, Spain</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>San Francisco, USA</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>Martin</td>
+      <td>New York, USA</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>Sarah</td>
+      <td>London, UK</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Tab</h2>
+
+
+<div class="flex two">
+
+  <div class="tabs three">
+    <input id='tab-1' type='radio' name='tabgroupB' checked />
+    <label class="pseudo button toggle" for="tab-1">Forest</label>
+    <input id='tab-2' type='radio' name='tabgroupB'>
+    <label class="pseudo button toggle" for="tab-2">Lake</label>
+    <input id='tab-3' type='radio' name='tabgroupB'>
+    <label class="pseudo button toggle" for="tab-3">Balloon</label>
+    <div class="row">
+      <div>
+        <img src="web/img/forest.jpg">
+      </div>
+
+      <div>
+        <img src="web/img/lake.jpg">
+      </div>
+
+      <div>
+        <img src="web/img/balloon.jpg">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="tabs three" style="text-align: center;">
+    <input id='tabC-1' type='radio' name='tabgroupC' checked />
+    <label class="pseudo button toggle" for="tabC-1">1</label>
+    /
+    <input id='tabC-2' type='radio' name='tabgroupC'>
+    <label class="pseudo button toggle" for="tabC-2">2</label>
+    /
+    <input id='tabC-3' type='radio' name='tabgroupC'>
+    <label class="pseudo button toggle" for="tabC-3">3</label>
+    <div class="row">
+      <div>
+        <div class="card" style="margin: 0 20px;">
+          <header>
+            <h3>Super important notice!</h3>
+          </header>
+          <p>Thank you for registering! By doing so you agree to the <a href="#">Terms and conditions</a></p>
+          <footer>
+            <label class="button" for="tabC-2">Agree</label>
+          </footer>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="margin: 0 20px;">
+          <header>
+            <h3>Your basic data</h3>
+          </header>
+          <section>
+            <input type="text" placeholder="Full Name">
+          </section>
+          <section>
+            <div class="select">
+              <select>
+                <option>Where did you find us?</option>
+                <option>Facebook</option>
+                <option>Twitter</option>
+                <option>Linkedin</option>
+              </select>
+            </div>
+          </section>
+          <footer>
+            <label class="button" for="tabC-3">Next</label>
+            <label class="button dangerous" for="tabC-1">Back</label>
+          </footer>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="margin: 0 20px;">
+          <header>
+            <h3>Create account</h3>
+          </header>
+          <section>
+            <input type="email" placeholder="Email">
+          </section>
+          <section>
+            <input type="password" placeholder="Password">
+          </section>
+          <footer>
+            <button class="success">Finish!</button>
+            <label class="button dangerous" for="tabC-2">Back</label>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="flex two">
+
+  <div class="tabs two">
+    <input id='tabA-1' type='radio' name='tabgroupA' checked />
+    <label class="button toggle" for="tabA-1">Tab 1</label>
+    <input id='tabA-2' type='radio' name='tabgroupA'>
+    <label class="button toggle" for="tabA-2">Tab 2</label>
+    <div class="row">
+      <div class='tab'>
+        <div>
+          <h2>This is the first tab</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div>
+          <h2>This is the second tab</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="tabs four">
+    <input id='tabD-1' type='radio' name='tabgroupD' checked />
+    <label class="pseudo button toggle" for="tabD-1">•</label>
+    <input id='tabD-2' type='radio' name='tabgroupD'>
+    <label class="pseudo button toggle" for="tabD-2">•</label>
+    <input id='tabD-3' type='radio' name='tabgroupD'>
+    <label class="pseudo button toggle" for="tabD-3">•</label>
+    <input id='tabD-4' type='radio' name='tabgroupD'>
+    <label class="pseudo button toggle" for="tabD-4">•</label>
+    <div class="row">
+      <div class='tab'>
+        <div>
+          <h2>This is the first tab</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div>
+          <h2>This is the second tab</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+      </div>
+      <div class='tab'>
+        <div>
+          <h2>This is the third tab</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+
+      <div class="tab">
+        <div>
+          <h2>This is the fourth tab</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2 id="tooltip">Tooltip</h2>
+
+<p>
+  <button data-tooltip="This is a great tooltip" class="tooltip-left">
+    Left
+  </button>
+  <button data-tooltip="This is a great tooltip">
+    Bottom (default)
+  </button>
+  <button data-tooltip="This is a great tooltip" class="tooltip-top">
+    Top
+  </button>
+  <button data-tooltip="This is a great tooltip" class="tooltip-right">
+    Right
+  </button>
+</p>
+<br><br><br>
+</main><script>window.onload = function(){
+
+  // Dropimage handler
+  [].forEach.call(document.querySelectorAll('.dropimage'), function(img){
+    img.onchange = function(e){
+      var inputfile = this, reader = new FileReader();
+      reader.onloadend = function(){
+        inputfile.style['background-image'] = 'url('+reader.result+')';
+        }
+      reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+  };
+</script><script>/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=_self.Prism={util:{encode:function(e){return e instanceof n?new n(e.type,t.util.encode(e.content),e.alias):"Array"===t.util.type(e)?e.map(t.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=t.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return t.util.clone(e)})}return e}},languages:{extend:function(e,n){var a=t.util.clone(t.languages[e]);for(var r in n)a[r]=n[r];return a},insertBefore:function(e,n,a,r){r=r||t.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==n)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return t.languages.DFS(t.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,n,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(n.call(e,l,e[l],a||l),"Object"!==t.util.type(e[l])||r[e[l]]?"Array"!==t.util.type(e[l])||r[e[l]]||(r[e[l]]=!0,t.languages.DFS(e[l],n,l,r)):(r[e[l]]=!0,t.languages.DFS(e[l],n,null,r)))}},plugins:{},highlightAll:function(e,n){for(var a,r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'),l=0;a=r[l++];)t.highlightElement(a,e===!0,n)},highlightElement:function(n,a,r){for(var l,i,o=n;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=t.languages[l]),n.className=n.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=n.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=n.textContent,u={element:n,language:l,grammar:i,code:s};if(!s||!i)return t.hooks.run("complete",u),void 0;if(t.hooks.run("before-highlight",u),a&&_self.Worker){var g=new Worker(t.filename);g.onmessage=function(e){u.highlightedCode=e.data,t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),t.hooks.run("after-highlight",u),t.hooks.run("complete",u)},g.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=t.highlight(u.code,u.grammar,u.language),t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(n),t.hooks.run("after-highlight",u),t.hooks.run("complete",u)},highlight:function(e,a,r){var l=t.tokenize(e,a);return n.stringify(t.util.encode(l),r)},tokenize:function(e,n){var a=t.Token,r=[e],l=n.rest;if(l){for(var i in l)n[i]=l[i];delete n.rest}e:for(var i in n)if(n.hasOwnProperty(i)&&n[i]){var o=n[i];o="Array"===t.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],g=u.inside,c=!!u.lookbehind,f=0,h=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var d=r[p];if(r.length>e.length)break e;if(!(d instanceof a)){u.lastIndex=0;var m=u.exec(d);if(m){c&&(f=m[1].length);var y=m.index-1+f,m=m[0].slice(f),v=m.length,k=y+v,b=d.slice(0,y+1),w=d.slice(k+1),P=[p,1];b&&P.push(b);var A=new a(i,g?t.tokenize(m,g):m,h);P.push(A),w&&P.push(w),Array.prototype.splice.apply(r,P)}}}}}return r},hooks:{all:{},add:function(e,n){var a=t.hooks.all;a[e]=a[e]||[],a[e].push(n)},run:function(e,n){var a=t.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(n)}}},n=t.Token=function(e,t,n){this.type=e,this.content=t,this.alias=n};if(n.stringify=function(e,a,r){if("string"==typeof e)return e;if("Array"===t.util.type(e))return e.map(function(t){return n.stringify(t,a,e)}).join("");var l={type:e.type,content:n.stringify(e.content,a,r),tag:"span",classes:["token",e.type],attributes:{},language:a,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===t.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}t.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var n=JSON.parse(e.data),a=n.language,r=n.code,l=n.immediateClose;_self.postMessage(t.highlight(r,t.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var a=document.getElementsByTagName("script");return a=a[a.length-1],a&&(t.filename=a.src,document.addEventListener&&!a.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+Prism.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},Prism.hooks.add("wrap",function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"))}),Prism.languages.xml=Prism.languages.markup,Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup;
+Prism.languages.css={comment:/\/\*[\w\W]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^\{\}\s][^\{\};]*?(?=\s*\{)/,string:/("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,property:/(\b|\B)[\w-]+(?=\s*:)/i,important:/\B!important\b/i,"function":/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},Prism.languages.css.atrule.inside.rest=Prism.util.clone(Prism.languages.css),Prism.languages.markup&&(Prism.languages.insertBefore("markup","tag",{style:{pattern:/(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,lookbehind:!0,inside:Prism.languages.css,alias:"language-css"}}),Prism.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|').*?\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:Prism.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:Prism.languages.css}},alias:"language-css"}},Prism.languages.markup.tag));
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,"function":/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0}}),Prism.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\`|\\?[^`])*`/,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript;
+</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-59832845-1', 'auto');
+ga('send', 'pageview');</script></body></html>
