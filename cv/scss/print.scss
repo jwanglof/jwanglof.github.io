@@ -1,0 +1,47 @@
+@media print {
+  #johan {
+    display: block;
+    text-align: center;
+    page-break-after: always;
+  }
+
+  .contact-information {
+    padding-top: 25px;
+  }
+
+  body, h1, h2, h3, ol, ul, div {
+    width: auto;border: 0;
+    margin: 0;
+    padding: 0;
+    float: none;
+    position: static;
+    overflow: visible;
+  }
+
+  nav, footer {
+    display: none;
+  }
+
+  main {
+    padding-top: 0;
+
+    .flex {
+      border-bottom: 0;
+      page-break-after: always;
+    }
+
+    .three-fourth {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .icon {
+      width: 100%;
+      padding-bottom: 0 !important;
+
+      i {
+        padding: 0;
+      }
+    }
+  }
+}

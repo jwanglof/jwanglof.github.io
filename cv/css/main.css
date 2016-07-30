@@ -2590,6 +2590,9 @@ select.stack {
   src: local("Lato Black"), local("Lato-Black"), url("../font/google/lato-v11-latin-900.woff2") format("woff2"), url("../font/google/lato-v11-latin-900.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ }
 
+#johan {
+  display: none; }
+
 html, body {
   font-family: 'Lato', sans-serif;
   font-weight: 400; }
