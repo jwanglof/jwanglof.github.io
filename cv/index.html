@@ -191,8 +191,10 @@
                                 <br />
                                 My thought through the whole process was to make sure that it would be very easy to use, so that any developer at Briteback could update the app without a hitch, and without me being present.
                                 <br />
-                                The infrastructure contains of VPNs from Digital Ocean that are running Docker-containers, which are easily managed from Docker Cloud. Behind these VPNs there are database-servers that do regular backups and can only be accessed from the office IP and by the different servers. Every server is monitored online on a big-screen TV at the office, with a log warning-system. The VPNs are running either Ubuntu or Debian.
-
+                                The infrastructure contains of VPNs from Digital Ocean that are running Docker-containers, which are easily managed from Docker Cloud. Behind these VPNs there are database-servers that do regular backups and can only be accessed from the office IP and by the different servers. Every server is monitored online on a big-screen TV at the office, with a log warning-system. The VPNs are running either Ubuntu or Debian. RethinkDB is used as database.
+                                <br />
+                                When version 3.0 was about to be release I created the migration-script for the new database-structure so all the old data was migrated correctly. The script was created for NodeJS and it took a couple of days to complete.
+                    
                                 <h3>Backend</h3>
                                 I created the skeleton that is used for all new servers Briteback creates. It consist of basic libraries that all the servers use and the folder-structure. All Briteback's servers are written in NodeJS with ES6 syntax.
 
