@@ -1,12 +1,14 @@
 @media print {
   #johan {
     display: block;
-    text-align: center;
     page-break-after: always;
+
+    .cover-letter {
+      text-align: left;
+    }
   }
 
   .contact-information {
-    padding-top: 25px;
   }
 
   body, h1, h2, h3, ol, ul, div {
