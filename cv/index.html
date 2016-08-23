@@ -34,17 +34,17 @@
         <h2>Print version</h2>
         Printed from <a href="http://jwanglof.se/cv/">http://jwanglof.se/cv/</a>
         <h2 class="contact-information">Contact information</h2>
-        <h3>Address</h3>
+        <h4>Address</h4>
         Johan Wänglöf
         <br />
         Björnkärrsgatan 13B.11
         <br />
         58436 Linköping
 
-        <h3>Phonenumber</h3>
+        <h4>Phonenumber</h4>
         <a href="tel:0046708101911">0046708601911</a>
 
-        <h3>E-mail</h3>
+        <h4>E-mail</h4>
         <a href="mailto:jwanglof@gmail.com">jwanglof@gmail.com</a>
     </div>
 
@@ -140,24 +140,14 @@
                         <span><i class="icon-at"></i><a href="https://briteback.com" target="_blank">Briteback</a></span>
                         <span>04/2015 - <i>present</i></span>
                     </div>
-                    Briteback is a start-up that builds a communication app that focuses on businesses. It combines e-mail, calendar and chat seamlessly where you can share an e-mail to a chat-room, to be able to discuss it further without having to forward it to the correct people, or vice versa, you can create an e-mail from a chat-message. I had many responsibilities since we were only a team of 6, and I were one of the first employees.
-                    <br />
-                    I set-up our infrastructure, I developed on both backend and frontend, and also helped choosing what technologies we should use when we started developing. I worked at Briteback parallel while finishing my studies.
-                    <br />
-                    I'm still employed at Briteback but on a need-help basis, meaning that I will only work if they need help with anything that are within my areas at Briteback.
-                    <h3>Infrastructure</h3>
-                    When Briteback was about to release their alpha version I was in charge to investigate, and set-up, Briteback's entire infrastructure. I spent many hours researching what other developers were saying that would fit the backend-structure. I came up with a plan that we tried, but failed because I didn't have the experience needed at that time. The second plan worked fine and that's the one Briteback is using today, with a few tweaks of course.
-                    <br />
-                    My thought through the whole process was to make sure that it would be very easy to use, so that any developer at Briteback could update the app without a hitch, and without me being present.
-                    <br />
-                    The infrastructure contains of VPNs from Digital Ocean that are running Docker-containers, which are easily managed from Docker Cloud. Behind these VPNs there are database-servers that do regular backups and can only be accessed from the office IP and by the different servers. Every server is monitored online on a big-screen TV at the office, with a log warning-system. The VPNs are running either Ubuntu or Debian. RethinkDB is used as database.
-                    <br />
-                    When version 3.0 was about to be release I created the migration-script for the new database-structure so all the old data was migrated correctly. The script was created for NodeJS and it took a couple of days to complete.
+                    I set-up the infrastructure, I developed on both backend and frontend, and also helped choosing what technologies we should use when we started developing. I worked at Briteback parallel while finishing my studies.
+                    <h4>Infrastructure</h4>
+                    I was in charge to set-up the infrastructure for the new version of Briteback, which needed to be easy to use for the employees. I chose to use Docker, with Docker Cloud, for easy development and maintenance. RethinkDB-servers run behind the containers with regular backups.
 
-                    <h3>Backend</h3>
+                    <h4>Backend</h4>
                     I created the skeleton that is used for all new servers Briteback creates. It consist of basic libraries that all the servers use and the folder-structure. All Briteback's servers are written in NodeJS with ES6 syntax.
 
-                    <h3>Frontend</h3>
+                    <h4>Frontend</h4>
                     The frontend consist of BackboneJS and React with ES6 syntax. Since ES6 is used both on backend and frontend makes it easier to switch between them. The connection with the backend is based on WebSockets, with a wrapper called Deepstream that makes the communication via the WebSocket a bit easier and also gives more functions that makes working with data easier.
                 </div>
 
@@ -171,13 +161,13 @@
                     Bo Tillsammans (eng. Live Together) is Sweden's only service to promote communal-living in an easy way. The project was started by Hanna Söderquist in 2014 after noticing that Sweden doesn't have the same communal-living society as Germany have, where she studied for a couple of years. She started to look for developers and found me and Alexander Häger at Linköpings university, and we came up with the different ideas that are up on the site today. The site is a side-project that has been developed by us in parallel with both finishing my studies and working.
                     <br />
                     We created the site from the ground up using <a href="http://flask.pocoo.org/" target="_blank">Flask</a> (a Python microframework) as backend and <a href="https://angularjs.org/" target="_blank">AngularJS</a> as frontend-framework and the site is growing every day with new users that are looking for and offering accommodations.
-                    <h3>Infrastructure</h3>
+                    <h4>Infrastructure</h4>
                     We have gone through many iterations on our server with different configurations to find the correct one that scales well and is easily maintained. When we released our version 1.0 I re-did our server one more time, and now with Docker. I chose this configuration because I have really good experiences with Docker from my work at Briteback.
 
-                    <h3>Backend</h3>
+                    <h4>Backend</h4>
                     The backend is written in Python, using Flask as framework. I really like Python and that's mainly why we chose Flask as backend framework.
 
-                    <h3>Frontend</h3>
+                    <h4>Frontend</h4>
                     The frontend is based on AngularJS as frontend-framework, with CSS and HTML5. Alexander chose AngularJS since he needed it for a web-design course at the university. The code-base is from we started, with a few iterations on it, but I'm currently migrating to an ES6 syntax so it's nicer, and also so it makes it easier to transform the app to Angular 2 if we choose.
                 </div>
 
@@ -197,7 +187,7 @@
                 <div class="work">
                     <div class="title">
                         <span>Baggage handler</span>
-                        <span><i class="icon-at"></i><a href="https://www.sas.se" target="_blank">SAS</a></span>
+                        <span><i class="icon-at"></i><a href="http://sasground.com/" target="_blank">SGS (Sas Ground Services)</a></span>
                         <span>12/2007 - 08/2009</span>
                     </div>
                     <div class="text">
@@ -297,17 +287,17 @@
                 <label for="contact_modal" class="close">&times;</label>
             </header>
             <section class="content">
-                <h3>Address</h3>
+                <h4>Address</h4>
                 Johan Wänglöf
                 <br />
                 Björnkärrsgatan 13B.11
                 <br />
                 58436 Linköping
 
-                <h3>Phonenumber</h3>
+                <h4>Phonenumber</h4>
                 <a href="tel:0046708101911">0046708601911</a>
 
-                <h3>E-mail</h3>
+                <h4>E-mail</h4>
                 <a href="mailto:jwanglof@gmail.com">jwanglof@gmail.com</a>
             </section>
         </article>
