@@ -133,7 +133,7 @@
                         <span><i class="icon-at"></i><a href="https://briteback.com" target="_blank">ÅF</a></span>
                         <span>09/2016 - <i>present</i></span>
                     </div>
-                    I'm lead of the frontend at our customer. I develop both frontend and backend, also includes server-maintenance in various ways.
+                    I'm lead of the frontend at our customer. I develop both frontend and backend, also includes server-maintenance in various ways. We're using Jenkins as automatic build-system for our test-domain.
                     
                     <h4>Backend</h4>
                     The backends/services/integrations are a mix written in Java, C#, Mule, and ASP.NET. Using JBoss for Java, IIS for C# and ASP.NET, and Mule's MMC for the Mule-projects.
@@ -171,13 +171,13 @@
                     <br /><br />
                     We created the site from the ground up using <a href="http://flask.pocoo.org/" target="_blank">Flask</a> (a Python microframework) as backend and <a href="https://angularjs.org/" target="_blank">AngularJS</a> as frontend-framework and the site is growing every day with new users that are looking for and offering accommodations.
                     <h4>Infrastructure</h4>
-                    We have gone through many iterations on our server with different configurations to find the correct one that scales well and is easily maintained. When we released our version 1.0 I re-did our server one more time, and now with Docker. I chose this configuration because I have really good experiences with Docker from my work at Briteback.
+                    We have gone through many iterations on our server with different configurations to find the correct one that scales well and is easily maintained. We're now using plain uWSGI to serve our backend to Nginx, and Nginx is serving our static frontend-files.
 
                     <h4>Backend</h4>
-                    The backend is written in Python, using Flask as framework. I really like Python and that's mainly why we chose Flask as backend framework.
+                    The backend is written in Python, using Flask as framework. The backend is automatically built with Jenkins and pushed to the webserver where it's auto-deployed to uWSGI.
 
                     <h4>Frontend</h4>
-                    The frontend is based on AngularJS as frontend-framework, with CSS and HTML5. Alexander chose AngularJS since he needed it for a web-design course at the university. The code-base is from we started, with a few iterations on it, but I'm currently migrating to an ES6 syntax so it's nicer, and also so it makes it easier to transform the app to Angular 2 if we choose.
+                    The frontend is based on AngularJS as frontend-framework, with CSS and HTML5. It's migrated to ES6 and built automatically with Jenkins and pushed to the webserver where it's auto-deployed to Nginx.
                 </div>
 
                 <!--Janitor-->
