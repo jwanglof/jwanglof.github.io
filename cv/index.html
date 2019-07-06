@@ -11,7 +11,7 @@
 
     <nav>
         <a href="#" class="brand">
-            <img class="logo" src="img/johan.jpg" />
+            <img class="logo" src="img/johan.jpg" alt="Image of Johan" />
             <span>
                 Johan Wänglöf's Curriculum Vitae
             </span>
@@ -54,92 +54,41 @@
     <main>
         <section class="flex four">
             <div class="icon">
-                <i class="icon-book"></i>
-                <span class="title">Education</span>
-            </div>
-
-            <div class="three-fourth">
-                <!--LIU-->
-                <div class="work">
-                    <div class="title">
-                        <span><a href="https://liu.se/utbildning/program/innovativprog?l=sv" target="_blank">Innovative Programming</a></span>
-                        <span><i class="icon-at"></i><a href="https://www.liu.se/?l=en&sc=true" target="_blank">Linköping university</a></span>
-                        <span>2011 - 2016</span>
-                    </div>
-                    Innovative programming is a bachelors degree for developers. During these years I've learned a lot of different languages which have given me a very broad syntax-understanding for any languages.
-                    <br />
-                    I learned how to work in smaller, and bigger, groups. In these groups we mainly used agile development which I really like, we also read about other methodolgies but didn't use them in practice. My thesis was how to cache emails from a Gmail-account in the browser to minify the traffic to a server (<a href="http://www.diva-portal.org/smash/record.jsf?pid=diva2%3A874387&dswid=9159" target="_blank">link</a>).
-                    <br />
-                    <strong>Languages used</strong>: Python, JavaScript, Java, C#/.Net, Ruby, C++/C
-                    <br />
-                    <strong>Other</strong>: Git, Android, SQL, Linux
-                </div>
-
-                <!--Langara-->
-                <div class="work">
-                    <div class="title">
-                        <span>Preparatory studies to dietitian</span>
-                        <span><i class="icon-at"></i><a href="http://langara.ca/" target="_blank">Langara, BC, Canada</a></span>
-                        <span>2009 - 2010</span>
-                    </div>
-                    <div class="text">
-                        I read a basic English course because I had to as an international student. Also read one biology- and sociology-course. During this year I improved my English very much, both in writing and in speaking.
-                    </div>
-                </div>
-
-                <!--UMU-->
-                <div class="work">
-                    <div class="title">
-                        <span>Stand alone courses</span>
-                        <span>
-                            <i class="icon-at"></i><a href="http://www.umu.se/english" target="_blank">Umeå university</a>,
-                            <i class="icon-at"></i><a href="https://www.bth.se/eng/" target="_blank">Blekinge Tekniska Högskola</a>,
-                            <i class="icon-at"></i><a href="http://www.ltu.se/?l=en" target="_blank">Luleå University of Technology</a>
-                        </span>
-                        <span>2009, 2011</span>
-                    </div>
-                    <div class="title">
-                        <span>Technology studies</span>
-                        <span><i class="icon-at"></i><a href="http://www.du.se/en" target="_blank">Dalarna University</a></span>
-                        <span>2010 - 2011</span>
-                    </div>
-                </div>
-
-                <!--Vox Gymn-->
-                <div class="work">
-                    <div class="title">
-                        <span>Technology program</span>
-                        <span><i class="icon-at"></i><a href="http://www.voxnadalen.ovanaker.se/Voxgymn2014/" target="_blank">Voxnadalens Gymnasium</a></span>
-                        <span>2002 - 2005</span>
-                    </div>
-                    <div class="text">
-                        My orientation was into programming at my senior year. The previous two years I had general courses that all Swedish-students have.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="flex four">
-            <div class="icon">
                 <i class="icon-suitcase"></i>
                 <span class="title">Work experience</span>
             </div>
 
             <div class="three-fourth">
+                <!--SBAB-->
+                <div class="work">
+                    <div class="title">
+                        <span>Developer</span>
+                        <span><i class="icon-at"></i><a href="https://jobb.sbab.se/departments/tech" target="_blank">SBAB</a></span>
+                        <span>01/2018 - <i>present</i></span>
+                    </div>
+                    Was one of the first employee of a completely new team in Karlstad. My primary focus is on the frontend, but I also develop backends. We utilize Kafka and micro-services built with Docker.
+                    
+                    <h4>Backend</h4>
+                    The backends are a mainly written in Java with SpringBoot. Some are using Java EE.
+
+                    <h4>Frontend</h4>
+                    There are many different frontends, which consist of AngularJS with ES5 syntax, jQuery, Handlebars, and newly created frontends primarily use React (often with Redux).
+                </div>
+
                 <!--AF-->
                 <div class="work">
                     <div class="title">
                         <span>Developer, frontend lead</span>
-                        <span><i class="icon-at"></i><a href="https://briteback.com" target="_blank">ÅF</a></span>
-                        <span>09/2016 - <i>present</i></span>
+                        <span><i class="icon-at"></i><a href="https://www.afconsult.com/" target="_blank">ÅF</a></span>
+                        <span>09/2016 - 01/2018</span>
                     </div>
-                    I'm lead of the frontend at our customer. I develop both frontend and backend, also includes server-maintenance in various ways. We're using Jenkins as automatic build-system for our test-domain.
-                    
+                    I was the lead of the frontend for our customer. I developed both frontend and backend, which also included server-maintenance in various ways. We were using Jenkins as automatic build-system for the test-domain.
+
                     <h4>Backend</h4>
-                    The backends/services/integrations are a mix written in Java, C#, Mule, and ASP.NET. Using JBoss for Java, IIS for C# and ASP.NET, and Mule's MMC for the Mule-projects.
+                    The backends/services/integrations were a mix written in Java, C#, Mule, and ASP.NET. Used JBoss for Java, IIS for C# and ASP.NET, and Mule's MMC for the Mule-projects.
 
                     <h4>Frontend</h4>
-                    The frontends consist of AngularJS with ES5 syntax, with AJAX-calls to the backend. I'm lead to get the frontend on all projects up-to-date.
+                    The frontends consisted of AngularJS with ES5 syntax, with AJAX-calls to the backend. I was lead to get the frontend on all projects up-to-date.
                 </div>
                 
                 <!--Briteback-->
@@ -213,6 +162,73 @@
                     </div>
                     <div class="text">
                         My task was to help people that had any kind of problem with their Samsung product. My main area was multimedia products but I also helped out with other areas if they needed.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex four">
+            <div class="icon">
+                <i class="icon-book"></i>
+                <span class="title">Education</span>
+            </div>
+
+            <div class="three-fourth">
+                <!--LIU-->
+                <div class="work">
+                    <div class="title">
+                        <span><a href="https://liu.se/utbildning/program/innovativprog?l=sv" target="_blank">Innovative Programming</a></span>
+                        <span><i class="icon-at"></i><a href="https://www.liu.se/?l=en&sc=true" target="_blank">Linköping university</a></span>
+                        <span>2011 - 2016</span>
+                    </div>
+                    Innovative programming is a bachelors degree for developers. During these years I've learned a lot of different languages which have given me a very broad syntax-understanding for any languages.
+                    <br />
+                    I learned how to work in smaller, and bigger, groups. In these groups we mainly used agile development which I really like, we also read about other methodolgies but didn't use them in practice. My thesis was how to cache emails from a Gmail-account in the browser to minify the traffic to a server (<a href="http://www.diva-portal.org/smash/record.jsf?pid=diva2%3A874387&dswid=9159" target="_blank">link</a>).
+                    <br />
+                    <strong>Languages used</strong>: Python, JavaScript, Java, C#/.Net, Ruby, C++/C
+                    <br />
+                    <strong>Other</strong>: Git, Android, SQL, Linux
+                </div>
+
+                <!--Langara-->
+                <div class="work">
+                    <div class="title">
+                        <span>Preparatory studies to dietitian</span>
+                        <span><i class="icon-at"></i><a href="http://langara.ca/" target="_blank">Langara, BC, Canada</a></span>
+                        <span>2009 - 2010</span>
+                    </div>
+                    <div class="text">
+                        I read a basic English course because I had to as an international student. Also read one biology- and sociology-course. During this year I improved my English very much, both in writing and in speaking.
+                    </div>
+                </div>
+
+                <!--UMU-->
+                <div class="work">
+                    <div class="title">
+                        <span>Stand alone courses</span>
+                        <span>
+                            <i class="icon-at"></i><a href="http://www.umu.se/english" target="_blank">Umeå university</a>,
+                            <i class="icon-at"></i><a href="https://www.bth.se/eng/" target="_blank">Blekinge Tekniska Högskola</a>,
+                            <i class="icon-at"></i><a href="http://www.ltu.se/?l=en" target="_blank">Luleå University of Technology</a>
+                        </span>
+                        <span>2009, 2011</span>
+                    </div>
+                    <div class="title">
+                        <span>Technology studies</span>
+                        <span><i class="icon-at"></i><a href="http://www.du.se/en" target="_blank">Dalarna University</a></span>
+                        <span>2010 - 2011</span>
+                    </div>
+                </div>
+
+                <!--Vox Gymn-->
+                <div class="work">
+                    <div class="title">
+                        <span>Technology program</span>
+                        <span><i class="icon-at"></i><a href="http://www.voxnadalen.ovanaker.se/Voxgymn2014/" target="_blank">Voxnadalens Gymnasium</a></span>
+                        <span>2002 - 2005</span>
+                    </div>
+                    <div class="text">
+                        My orientation was into programming at my senior year. The previous two years I had general courses that all Swedish students have.
                     </div>
                 </div>
             </div>
